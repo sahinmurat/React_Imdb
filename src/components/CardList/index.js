@@ -1,21 +1,19 @@
-import {useContext} from 'react';
-import {Card} from "../Card";
-import {MovieContext} from "../../Movie";
-import {StyledCardList} from "./CardList.style"
+import React, { useEffect, useState } from "react";
+import { Card } from "../Card";
+import { StyledCardList } from "./CardList.style";
 
-export const CardList = () => {
-  const {movieList, baseImageUrl} = useContext(MovieContext);
+export const CardList = ({ movie, imageUrl }) => {
     return (
         <StyledCardList>
-           {movieList?.map(
-               (movie, index) => (
-               <Card 
-                key={index} 
-                title={movie.title}
-                id={movie.id}
-                imgSrc={baseImageUrl + movie.poster_path}
-                />)
-            )}
+            {movie?.map((gelen, index) => {
+                return (
+                    <Card
+                        moviee={gelen}
+                        key={index}
+                        imgSrc={imageUrl + gelen.poster_path}
+                    />
+                );
+            })}
         </StyledCardList>
-    )
-}
+    );
+};
