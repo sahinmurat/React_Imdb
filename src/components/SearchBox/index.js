@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+import { Tasiyici } from "../../App";
 import {
   StyledSearchBox,
   StyledSearchButton,
@@ -7,11 +8,14 @@ import {
 
 export const SearchBox = ({ setSearchKeyWord }) => {
   const inputRef = useRef();
+  const TasiyicidanGelen = useContext(Tasiyici);
   return (
     <StyledSearchBox>
       <StyledSearchInput ref={inputRef} />
       <StyledSearchButton
-        onClick={() => setSearchKeyWord(inputRef.current.value)}
+        onClick={() =>
+          TasiyicidanGelen.setSearchKeyWord(inputRef.current.value)
+        }
       >
         Search
       </StyledSearchButton>

@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Card } from "../Card";
+import { Tasiyici } from "../../App";
 import { StyledCardList } from "./CardList.style";
 
-export const CardList = ({ movie, imageUrl }) => {
-    return (
-        <StyledCardList>
-            {movie?.map((gelen, index) => {
-                return (
-                    <Card
-                        moviee={gelen}
-                        key={index}
-                        imgSrc={imageUrl + gelen.poster_path}
-                    />
-                );
-            })}
-        </StyledCardList>
-    );
+export const CardList = () => {
+  const TasiyicidanGelen = useContext(Tasiyici);
+  return (
+    <StyledCardList>
+      {TasiyicidanGelen.amovie?.map((gelen, index) => {
+        return (
+          <Card
+            moviee={gelen}
+            key={index}
+            imgSrc={TasiyicidanGelen.baseImageUrl + gelen.poster_path}
+          />
+        );
+      })}
+    </StyledCardList>
+  );
 };

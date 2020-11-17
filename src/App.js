@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext } from "react";
 import axios from "axios";
 import { CardList } from "./components/CardList";
 import { SearchBox } from "./components/SearchBox";
@@ -7,6 +7,8 @@ import "./App.css";
 const baseUrl = "https://api.themoviedb.org/3/search/movie";
 const apikey = "f7d8b455b98784f78ffb0cb58f631580";
 const baseImageUrl = "https://image.tmdb.org/t/p/w500";
+
+export const Tasiyici = createContext();
 
 function App() {
   const [amovie, setMovie] = useState([]);
@@ -27,8 +29,10 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBox setSearchKeyWord={setSearchKeyWord} />
-      <CardList movie={amovie} imageUrl={baseImageUrl} />
+      <Tasiyici.Provider value={{ amovie, setSearchKeyWord, baseImageUrl }}>
+        <SearchBox />
+        <CardList />
+      </Tasiyici.Provider>
     </div>
   );
 }
