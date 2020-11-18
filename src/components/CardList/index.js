@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Card } from "../Card";
-import { Tasiyici } from "../../App";
+import { Tasiyici } from "../../Movie";
 import { StyledCardList } from "./CardList.style";
 
 export const CardList = () => {

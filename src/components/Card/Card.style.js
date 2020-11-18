@@ -29,6 +29,6 @@ export const StyledMovieImage = styled.img`
   height: 75%;
   border: 3px solid red;
   margin: 5px;
-  font-size: 1rem;
+  font-size: 0.7rem;
   color: blue;
 `;

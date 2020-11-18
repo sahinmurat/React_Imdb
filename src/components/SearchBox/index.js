@@ -1,5 +1,5 @@
 import { useRef, useContext } from "react";
-import { Tasiyici } from "../../App";
+import { Tasiyici } from "../../Movie";
 import {
   StyledSearchBox,
   StyledSearchButton,
