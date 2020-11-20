@@ -11,6 +11,7 @@ export const CardList = () => {
         return (
           <Card
             moviee={gelen}
+            id={gelen.id}
             key={index}
             imgSrc={TasiyicidanGelen.baseImageUrl + gelen.poster_path}
           />

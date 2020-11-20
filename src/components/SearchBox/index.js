@@ -6,7 +6,7 @@ import {
   StyledSearchInput,
 } from "./SearchBox.style";
 
-export const SearchBox = ({ setSearchKeyWord }) => {
+export const SearchBox = () => {
   const inputRef = useRef();
   const TasiyicidanGelen = useContext(Tasiyici);
   return (

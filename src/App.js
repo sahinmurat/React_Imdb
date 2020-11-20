@@ -1,11 +1,15 @@
 import { Movie } from "./Movie";
-import "./App.css";
+import { MovieDetails } from "./MovieDetails";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Movie />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/detail/:id" component={MovieDetails} exact />
+        <Route path="/" component={Movie} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
